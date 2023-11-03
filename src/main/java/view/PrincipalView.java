@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author talle
@@ -26,25 +28,25 @@ public class PrincipalView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnIncluirPrincipal = new javax.swing.JButton();
+        btnConsultaPrincipal = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Incluir Funcionario");
-        jButton1.setMaximumSize(new java.awt.Dimension(150, 22));
-        jButton1.setPreferredSize(new java.awt.Dimension(150, 22));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnIncluirPrincipal.setText("Incluir Funcionario");
+        btnIncluirPrincipal.setMaximumSize(new java.awt.Dimension(150, 22));
+        btnIncluirPrincipal.setPreferredSize(new java.awt.Dimension(150, 22));
+        btnIncluirPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnIncluirPrincipalActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Consultar Funcionarios");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnConsultaPrincipal.setText("Consultar Funcionarios");
+        btnConsultaPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnConsultaPrincipalActionPerformed(evt);
             }
         });
 
@@ -63,9 +65,9 @@ public class PrincipalView extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(67, 67, 67)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnIncluirPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)))
+                        .addComponent(btnConsultaPrincipal)))
                 .addContainerGap(83, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -75,21 +77,21 @@ public class PrincipalView extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(btnIncluirPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConsultaPrincipal))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnIncluirPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIncluirPrincipalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnIncluirPrincipalActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnConsultaPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaPrincipalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnConsultaPrincipalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,9 +128,17 @@ public class PrincipalView extends javax.swing.JFrame {
         });
     }
 
+    public JButton getBtnConsultaPrincipal() {
+        return btnConsultaPrincipal;
+    }
+
+    public JButton getBtnIncluirPrincipal() {
+        return btnIncluirPrincipal;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnConsultaPrincipal;
+    private javax.swing.JButton btnIncluirPrincipal;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
