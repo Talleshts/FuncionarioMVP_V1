@@ -128,7 +128,7 @@ public class PrincipalView extends javax.swing.JFrame {
         });
     }
 
-    public JButton getBtnConsultaPrincipal() {
+    public JButton getBtnConsultarPrincipal() {
         return btnConsultaPrincipal;
     }
 

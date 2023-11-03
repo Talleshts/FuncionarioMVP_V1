@@ -6,11 +6,12 @@ package presenter;
 
 /**
  *
- * @author talle
+ * @author Arthu
  */
-public class VisualizacaoPresenter {
+public class TestaTudo {
     
-    public VisualizacaoPresenter(){
+    public static void main(String[] args){
         
+        PrincipalPresenter presenterPrincipal = new PrincipalPresenter();
     }
 }
