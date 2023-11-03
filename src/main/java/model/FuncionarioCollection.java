@@ -53,6 +53,12 @@ public class FuncionarioCollection {
         }
     }
     
+    public void listarTudo(){
+        for(Funcionario funcionario : funcionarios){
+            System.out.println(funcionario.getNome());
+        }
+    }
+    
     public ArrayList<Funcionario> getFuncionarios() {
         return funcionarios;
     }

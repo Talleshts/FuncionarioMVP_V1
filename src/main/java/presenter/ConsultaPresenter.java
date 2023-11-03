@@ -6,6 +6,8 @@ package presenter;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import model.Funcionario;
 import model.FuncionarioCollection;
 import view.ConsultaView;
@@ -24,9 +26,6 @@ public class ConsultaPresenter {
         viewConsulta = new ConsultaView();
         
         /* Adicionar os ActionListeners */
-        
-        viewConsulta.setLocationRelativeTo(null);
-        viewConsulta.setVisible(true);
     
         viewConsulta.getBtnCancelarConsulta().addActionListener(new ActionListener() {
             @Override
@@ -35,14 +34,39 @@ public class ConsultaPresenter {
                 viewConsulta.dispose();
             }
         });
+        
+        viewConsulta.setLocationRelativeTo(null);
+        viewConsulta.setVisible(true);
     
     }
    
-    
-
-    void adicionarNovoFuncionario(Funcionario novoFuncionario) {
+    // Método para atualizar a tabela com os dados dos funcionários
+    public void atualizarTabela() {
         
-        colecaoFuncionarios.adicionarFuncionario(novoFuncionario);
-        viewConsulta.atualizarTabela();
+        JTable tableConsulta = viewConsulta.getTableConsulta();
+        DefaultTableModel model = (DefaultTableModel) tableConsulta.getModel();
+        model.addColumn("Nome do Funcionário");
+        model.setRowCount(0); // Limpa todas as linhas da tabela
+
+        for (Funcionario funcionario : colecaoFuncionarios.getFuncionarios()) {
+            System.out.println(funcionario.getNome());
+            // Adicione uma nova linha à tabela com os dados do funcionário
+            Object[] rowData = {
+                funcionario.getNome()
+            };
+            model.addRow(rowData);
+        }
     }
+
+    /*
+        Não deveria ser papel da ConsultaPresenter chamar o método "adicionarFuncionario"
+        da FuncionarioCollection.
+
+        Quem deve fazer isso é a própria InclusaoPresenter.
+    */
+    // void adicionarNovoFuncionario(Funcionario novoFuncionario) {
+    //     
+    //     colecaoFuncionarios.adicionarFuncionario(novoFuncionario);
+    //     viewConsulta.atualizarTabela();
+    // }
 }

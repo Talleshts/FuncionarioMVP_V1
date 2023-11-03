@@ -29,6 +29,7 @@ public class PrincipalPresenter {
             // Ao clicar no botão de consulta, instanciamos a ConsultaPresenter
             public void actionPerformed(ActionEvent e){
                 ConsultaPresenter presenterConsulta = new ConsultaPresenter();
+                presenterConsulta.atualizarTabela();
             }
         });
         

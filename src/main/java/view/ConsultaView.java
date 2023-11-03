@@ -187,7 +187,7 @@ public class ConsultaView extends javax.swing.JFrame {
         });
     }
     
-      // Método para atualizar a tabela com os dados dos funcionários
+    // Método para atualizar a tabela com os dados dos funcionários
     public void atualizarTabela() {
         DefaultTableModel model = (DefaultTableModel) tableConsulta.getModel();
         model.setRowCount(0); // Limpa todas as linhas da tabela
