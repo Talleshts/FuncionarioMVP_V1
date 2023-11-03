@@ -16,6 +16,8 @@ public class FuncionarioCollection {
     
     private ArrayList<Funcionario> funcionarios;
     
+    public static long proximoId = 1;
+    
     private FuncionarioCollection(){
         funcionarios = new ArrayList<>();
     }
@@ -33,10 +35,8 @@ public class FuncionarioCollection {
         funcionarios.add(funcionario);
     }
     
-    public void removerFuncionario(long id){
-        
+    public void removerFuncionario(Long id){
         for(Funcionario funcionario : funcionarios){
-            
             if(funcionario.getId() == id){
                 funcionarios.remove(funcionario);
                 return;
@@ -45,27 +45,20 @@ public class FuncionarioCollection {
     }
     
     public void listarFuncionario(long id){
-        
         for(Funcionario funcionario : funcionarios){
-            
             if(funcionario.getId() == id){
                 System.out.println(funcionario.getNome());
                 return;
-                /*
-                    Na verdaaaaade, nós vamos tirar esse println daqui e adicionar
-                    no JTextField(?) a Stringzona com todos os campos de funcionario
-                */
             }
         }
     }
     
-    /*
-        Tallin, vi que no seu diagrama de classe tinha um método "atualizar",
-        mas acho que não precisa, olhando o requisito do trabalho.
+    public ArrayList<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
     
-        Além disso, provavelmente teríamos que criar um novo botão de atualizar,
-        uma nova tela de atualizar... etc.
-    */
-    
+    public static long getProximoId() {
+        return proximoId;
+    }
 }
 

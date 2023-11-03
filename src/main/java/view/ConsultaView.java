@@ -6,6 +6,9 @@ package view;
 
 import javax.swing.JButton;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import model.Funcionario;
+import model.FuncionarioCollection;
 
 /**
  *
@@ -13,11 +16,15 @@ import javax.swing.JTable;
  */
 public class ConsultaView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VisualizacaoView
-     */
+    private DefaultTableModel tableModel;
+    private FuncionarioCollection colecaoFuncionarios;
+
+    
     public ConsultaView() {
         initComponents();
+        
+        tableModel = new DefaultTableModel();
+        tableConsulta.setModel(tableModel);
     }
 
     /**
@@ -179,6 +186,25 @@ public class ConsultaView extends javax.swing.JFrame {
             }
         });
     }
+    
+      // Método para atualizar a tabela com os dados dos funcionários
+    public void atualizarTabela() {
+        DefaultTableModel model = (DefaultTableModel) tableConsulta.getModel();
+        model.setRowCount(0); // Limpa todas as linhas da tabela
+
+        for (Funcionario funcionario : colecaoFuncionarios.getFuncionarios()) {
+            // Adicione uma nova linha à tabela com os dados do funcionário
+            Object[] rowData = {
+                funcionario.getId(),
+                funcionario.getNome(),
+                funcionario.getCargo(),
+                funcionario.getDataAdmissao(),
+                funcionario.getSalario()
+            };
+            model.addRow(rowData);
+        }
+    }
+
 
     public JButton getBtnCancelarConsulta() {
         return btnCancelarConsulta;

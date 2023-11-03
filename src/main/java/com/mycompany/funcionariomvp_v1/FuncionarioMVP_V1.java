@@ -4,6 +4,8 @@
 
 package com.mycompany.funcionariomvp_v1;
 
+import presenter.PrincipalPresenter;
+
 /**
  *
  * @author talle
@@ -11,6 +13,6 @@ package com.mycompany.funcionariomvp_v1;
 public class FuncionarioMVP_V1 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        PrincipalPresenter presenterPrincipal = new PrincipalPresenter();
     }
 }

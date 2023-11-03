@@ -38,6 +38,8 @@ public class VisualizacaoView extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtSalarioVisualizacao = new javax.swing.JTextField();
         label1 = new java.awt.Label();
+        btnVisualizacaoRemover = new javax.swing.JButton();
+        btnVisualizacaoEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +73,15 @@ public class VisualizacaoView extends javax.swing.JFrame {
         label1.setName(""); // NOI18N
         label1.setText("Visualização de Funcionário");
 
+        btnVisualizacaoRemover.setText("Remover");
+        btnVisualizacaoRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisualizacaoRemoverActionPerformed(evt);
+            }
+        });
+
+        btnVisualizacaoEditar.setText("Editar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -93,7 +104,13 @@ public class VisualizacaoView extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtSalarioVisualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtSalarioVisualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnVisualizacaoRemover)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnVisualizacaoEditar)
+                                .addGap(21, 21, 21)))))
                 .addGap(73, 73, 73))
             .addGroup(layout.createSequentialGroup()
                 .addGap(104, 104, 104)
@@ -121,7 +138,11 @@ public class VisualizacaoView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtSalarioVisualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnVisualizacaoRemover)
+                    .addComponent(btnVisualizacaoEditar))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pack();
@@ -134,6 +155,10 @@ public class VisualizacaoView extends javax.swing.JFrame {
     private void txtCargoVisualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCargoVisualizacaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCargoVisualizacaoActionPerformed
+
+    private void btnVisualizacaoRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizacaoRemoverActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVisualizacaoRemoverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,6 +215,8 @@ public class VisualizacaoView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVisualizacaoEditar;
+    private javax.swing.JButton btnVisualizacaoRemover;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

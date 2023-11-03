@@ -4,6 +4,9 @@
  */
 package presenter;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import model.Funcionario;
 import model.FuncionarioCollection;
 import view.ConsultaView;
 
@@ -24,5 +27,22 @@ public class ConsultaPresenter {
         
         viewConsulta.setLocationRelativeTo(null);
         viewConsulta.setVisible(true);
+    
+        viewConsulta.getBtnCancelarConsulta().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Feche a view de consulta quando o botão de cancelar for pressionado
+                viewConsulta.dispose();
+            }
+        });
+    
+    }
+   
+    
+
+    void adicionarNovoFuncionario(Funcionario novoFuncionario) {
+        
+        colecaoFuncionarios.adicionarFuncionario(novoFuncionario);
+        viewConsulta.atualizarTabela();
     }
 }

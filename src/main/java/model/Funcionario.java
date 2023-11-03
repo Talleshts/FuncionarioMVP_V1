@@ -5,19 +5,20 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  *
  * @author Arthu
  */
 public class Funcionario {
-    private long id;
+    private final Long id;
     private String nome;
     private String cargo;
-    private LocalDate dataAdmissao;
-    private double salario;
+    private String dataAdmissao;
+    private Double salario;
     
-    public Funcionario(long id, String nome, String cargo, LocalDate dataAdmissao, double salario){
+    public Funcionario(Long id, String nome, String cargo, String dataAdmissao, Double salario){
         this.id = id;
         this.nome = nome;
         this.cargo = cargo;
@@ -33,7 +34,7 @@ public class Funcionario {
         return nome;
     }
 
-    public LocalDate getDataAdmissao() {
+    public String getDataAdmissao() {
         return dataAdmissao;
     }
 
