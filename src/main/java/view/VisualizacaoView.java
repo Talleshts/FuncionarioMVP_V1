@@ -6,6 +6,8 @@ package view;
 
 import javax.swing.JFormattedTextField;
 import javax.swing.JTextField;
+import com.toedter.calendar.JDateChooser;
+
 
 /**
  *
@@ -16,8 +18,12 @@ public class VisualizacaoView extends javax.swing.JFrame {
     /**
      * Creates new form ConsultaView
      */
+    private JDateChooser dateChooser;
+    
     public VisualizacaoView() {
         initComponents();
+        dateChooser = new JDateChooser();
+        txtDataAdmissaoVisualizacao.add(dateChooser);
     }
 
     /**
@@ -30,16 +36,16 @@ public class VisualizacaoView extends javax.swing.JFrame {
     private void initComponents() {
 
         txtNomeVisualizacao = new javax.swing.JTextField();
-        txtCargoVisualizacao = new javax.swing.JTextField();
+        txtDataAdmissaoVisualizacao = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtDataAdmissaoVisualizacao = new javax.swing.JFormattedTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtSalarioVisualizacao = new javax.swing.JTextField();
         label1 = new java.awt.Label();
         btnVisualizacaoRemover = new javax.swing.JButton();
         btnVisualizacaoEditar = new javax.swing.JButton();
+        txtCargoVisualizacao1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,18 +56,16 @@ public class VisualizacaoView extends javax.swing.JFrame {
             }
         });
 
-        txtCargoVisualizacao.setEditable(false);
-        txtCargoVisualizacao.addActionListener(new java.awt.event.ActionListener() {
+        txtDataAdmissaoVisualizacao.setEditable(false);
+        txtDataAdmissaoVisualizacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCargoVisualizacaoActionPerformed(evt);
+                txtDataAdmissaoVisualizacaoActionPerformed(evt);
             }
         });
 
         jLabel1.setText("Nome:");
 
         jLabel2.setText("Cargo:");
-
-        txtDataAdmissaoVisualizacao.setEditable(false);
 
         jLabel3.setText("Data de admissão:");
 
@@ -74,6 +78,8 @@ public class VisualizacaoView extends javax.swing.JFrame {
         label1.setText("Visualização de Funcionário");
 
         btnVisualizacaoRemover.setText("Remover");
+        btnVisualizacaoRemover.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnVisualizacaoRemover.setEnabled(false);
         btnVisualizacaoRemover.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVisualizacaoRemoverActionPerformed(evt);
@@ -81,41 +87,55 @@ public class VisualizacaoView extends javax.swing.JFrame {
         });
 
         btnVisualizacaoEditar.setText("Editar");
+        btnVisualizacaoEditar.setEnabled(false);
+
+        txtCargoVisualizacao1.setEditable(false);
+        txtCargoVisualizacao1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCargoVisualizacao1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCargoVisualizacao))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDataAdmissaoVisualizacao))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNomeVisualizacao))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtSalarioVisualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnVisualizacaoRemover)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnVisualizacaoEditar)
-                                .addGap(21, 21, 21)))))
-                .addGap(73, 73, 73))
             .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCargoVisualizacao1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(35, 35, 35)
+                                                .addComponent(btnVisualizacaoRemover)
+                                                .addGap(47, 47, 47)
+                                                .addComponent(btnVisualizacaoEditar)
+                                                .addGap(75, 75, 75))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtSalarioVisualizacao))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtNomeVisualizacao))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtDataAdmissaoVisualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,23 +146,23 @@ public class VisualizacaoView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNomeVisualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtCargoVisualizacao1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtDataAdmissaoVisualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCargoVisualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDataAdmissaoVisualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtSalarioVisualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtSalarioVisualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVisualizacaoRemover)
                     .addComponent(btnVisualizacaoEditar))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -152,13 +172,17 @@ public class VisualizacaoView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeVisualizacaoActionPerformed
 
-    private void txtCargoVisualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCargoVisualizacaoActionPerformed
+    private void txtDataAdmissaoVisualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataAdmissaoVisualizacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCargoVisualizacaoActionPerformed
+    }//GEN-LAST:event_txtDataAdmissaoVisualizacaoActionPerformed
 
     private void btnVisualizacaoRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizacaoRemoverActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVisualizacaoRemoverActionPerformed
+
+    private void txtCargoVisualizacao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCargoVisualizacao1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCargoVisualizacao1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,10 +223,14 @@ public class VisualizacaoView extends javax.swing.JFrame {
     }
 
     public JTextField getTxtCargoVisualizacao() {
-        return txtCargoVisualizacao;
+        return txtDataAdmissaoVisualizacao;
     }
 
-    public JFormattedTextField getTxtDataAdmissaoVisualizacao() {
+    public JDateChooser getDateChooser() {
+        return dateChooser;
+    }
+
+    public JTextField getTxtDataAdmissaoVisualizacao() {
         return txtDataAdmissaoVisualizacao;
     }
 
@@ -222,9 +250,10 @@ public class VisualizacaoView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private java.awt.Label label1;
-    private javax.swing.JTextField txtCargoVisualizacao;
-    private javax.swing.JFormattedTextField txtDataAdmissaoVisualizacao;
+    private javax.swing.JTextField txtCargoVisualizacao1;
+    private javax.swing.JTextField txtDataAdmissaoVisualizacao;
     private javax.swing.JTextField txtNomeVisualizacao;
     private javax.swing.JTextField txtSalarioVisualizacao;
     // End of variables declaration//GEN-END:variables
+
 }

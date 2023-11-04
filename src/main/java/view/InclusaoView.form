@@ -80,15 +80,15 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtDataAdmissaoInclusao" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDataAdmissaoInclusao" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtSalarioInclusao" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="69" max="32767" attributes="0"/>
+              <EmptySpace pref="71" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnIncluirInclusao" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnCancelarInclusao" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -122,8 +122,6 @@
         <Property name="text" type="java.lang.String" value="Cargo:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="txtDataAdmissaoInclusao">
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Data de admiss&#xe3;o:"/>
@@ -154,6 +152,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarInclusaoActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="txtDataAdmissaoInclusao">
     </Component>
   </SubComponents>
 </Form>
