@@ -45,7 +45,7 @@ public class VisualizacaoView extends javax.swing.JFrame {
         label1 = new java.awt.Label();
         btnVisualizacaoRemover = new javax.swing.JButton();
         btnVisualizacaoEditar = new javax.swing.JButton();
-        txtCargoVisualizacao1 = new javax.swing.JTextField();
+        txtCargoVisualizacao = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,10 +89,10 @@ public class VisualizacaoView extends javax.swing.JFrame {
         btnVisualizacaoEditar.setText("Editar");
         btnVisualizacaoEditar.setEnabled(false);
 
-        txtCargoVisualizacao1.setEditable(false);
-        txtCargoVisualizacao1.addActionListener(new java.awt.event.ActionListener() {
+        txtCargoVisualizacao.setEditable(false);
+        txtCargoVisualizacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCargoVisualizacao1ActionPerformed(evt);
+                txtCargoVisualizacaoActionPerformed(evt);
             }
         });
 
@@ -111,7 +111,7 @@ public class VisualizacaoView extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCargoVisualizacao1))
+                                .addComponent(txtCargoVisualizacao))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -149,7 +149,7 @@ public class VisualizacaoView extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtCargoVisualizacao1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCargoVisualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -180,9 +180,9 @@ public class VisualizacaoView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVisualizacaoRemoverActionPerformed
 
-    private void txtCargoVisualizacao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCargoVisualizacao1ActionPerformed
+    private void txtCargoVisualizacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCargoVisualizacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCargoVisualizacao1ActionPerformed
+    }//GEN-LAST:event_txtCargoVisualizacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,7 +250,7 @@ public class VisualizacaoView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private java.awt.Label label1;
-    private javax.swing.JTextField txtCargoVisualizacao1;
+    private javax.swing.JTextField txtCargoVisualizacao;
     private javax.swing.JTextField txtDataAdmissaoVisualizacao;
     private javax.swing.JTextField txtNomeVisualizacao;
     private javax.swing.JTextField txtSalarioVisualizacao;

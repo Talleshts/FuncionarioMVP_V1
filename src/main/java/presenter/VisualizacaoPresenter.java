@@ -33,8 +33,8 @@ public class VisualizacaoPresenter {
 
         // Agora você pode acessar os componentes da view
         viewVisualizacao.getTxtNomeVisualizacao().setText(nomeFuncionario);
-        viewVisualizacao.getTxtDataAdmissaoVisualizacao().setText(dataAdmissao);
         viewVisualizacao.getTxtCargoVisualizacao().setText(cargoFuncionario);
+        viewVisualizacao.getTxtDataAdmissaoVisualizacao().setText(dataAdmissao);
         viewVisualizacao.getTxtSalarioVisualizacao().setText(salario.toString());
 
         viewVisualizacao.setLocationRelativeTo(null);
